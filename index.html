@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aman Pratap Singh | Software Engineer & Applied ML</title>
+  <meta name="description" content="Portfolio of Aman Pratap Singh — Software Engineer and Applied Machine Learning (UMD). GenAI, RAG, NLP, backend systems, and data analytics." />
+  <meta name="theme-color" content="#0b1220" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aman Pratap Singh | Portfolio" />
+  <meta property="og:description" content="Software Engineer & Applied ML — GenAI, RAG, NLP, backend systems, and data analytics." />
+  <meta property="og:type" content="website" />
+
+  <!-- Favicon (optional) -->
+  <!-- <link rel="icon" href="assets/favicon.ico" /> -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Optional: Google Analytics (GA4) — paste your Measurement ID -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>Aman Pratap Singh</span>
+      </a>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+          <span class="icon" aria-hidden="true">☾</span>
+        </button>
+      </nav>
+
+      <button class="hamburger" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile-drawer" id="mobileDrawer" hidden>
+      <nav class="mobile-nav" aria-label="Mobile">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        <a class="btn small" href="assets/Aman_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Software Engineer • Applied Machine Learning (UMD)</p>
+          <h1>Building <span class="grad">GenAI</span> + <span class="grad">Data</span> systems that scale and ship.</h1>
+          <p class="lead">
+            I build LLM-powered applications (RAG, embeddings, OCR pipelines), backend APIs, and analytics workflows.
+            Recently, I worked on domain-specific LLaMA fine-tuning and low-latency retrieval systems over large financial document corpora.
+          </p>
+
+          <div class="hero-cta">
+            <a class="btn" href="#projects">View Projects</a>
+            <a class="btn ghost" href="assets/Aman_Resume.pdf" target="_blank" rel="noopener">Download Resume</a>
+          </div>
+
+          <div class="hero-links">
+            <a class="chip" href="https://linkedin.com/in/aman-pratap-singh54" target="_blank" rel="noopener">
+              LinkedIn <span aria-hidden="true">↗</span>
+            </a>
+            <a class="chip" href="https://github.com/amanpratapsingh54" target="_blank" rel="noopener">
+              GitHub <span aria-hidden="true">↗</span>
+            </a>
+            <a class="chip" href="mailto:aman16@umd.edu">aman16@umd.edu</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="card">
+            <div class="card-header">
+              <div class="avatar" aria-hidden="true">APS</div>
+              <div>
+                <p class="card-title">Quick Snapshot</p>
+                <p class="muted">GenAI • NLP • Backends • Analytics</p>
+              </div>
+            </div>
+
+            <ul class="stats" role="list">
+              <li>
+                <span class="kpi">60K+</span>
+                <span class="muted">Financial Q&A pairs used for fine-tuning</span>
+              </li>
+              <li>
+                <span class="kpi">1,200+</span>
+                <span class="muted">PDFs grounded with RAG</span>
+              </li>
+              <li>
+                <span class="kpi">83%</span>
+                <span class="muted">Emotion recognition accuracy (thesis)</span>
+              </li>
+              <li>
+                <span class="kpi">45%</span>
+                <span class="muted">Throughput gain in compiler benchmarking</span>
+              </li>
+            </ul>
+
+            <div class="card-footer">
+              <a class="mini-link" href="#contact">Open to internships / full-time</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-bg" aria-hidden="true"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>About</h2>
+          <p class="muted">A quick overview of what I do and where I’m headed.</p>
+        </div>
+
+        <div class="two-col">
+          <div class="panel">
+            <h3>Who I am</h3>
+            <p>
+              I’m a Software Engineer and Applied ML graduate student at the University of Maryland.
+              I enjoy building production-ready systems that combine robust engineering with practical ML.
+            </p>
+            <p>
+              My work spans: fine-tuning and evaluating LLMs, building retrieval pipelines (FAISS / embeddings),
+              integrating OCR and document understanding, and delivering backend APIs for data products.
+            </p>
+          </div>
+
+          <div class="panel">
+            <h3>What I’m focusing on</h3>
+            <ul class="bullets">
+              <li>RAG design: chunking, indexing, evaluation, latency and cost trade-offs</li>
+              <li>Model optimization and inference: quantization, compiler stacks, throughput</li>
+              <li>Backend reliability: clean APIs, observability, and scalable data pipelines</li>
+              <li>Applied analytics: forecasting, anomaly detection, KPI dashboards</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Experience</h2>
+          <p class="muted">Industry work across GenAI, finance analytics, and healthcare automation.</p>
+        </div>
+
+        <div class="timeline">
+          <article class="item">
+            <div class="item-meta">
+              <h3>DeepEmergence <span class="badge">Software Engineer</span></h3>
+              <p class="muted">Jan 2023 – Jul 2024 • Bengaluru, India</p>
+            </div>
+            <ul class="bullets">
+              <li>Fine-tuned a domain-specific <strong>LLaMA-2</strong> model on 60K financial Q&A + filings; improved <strong>Top-3 retrieval accuracy by 37%</strong> in offline tests.</li>
+              <li>Architected low-latency <strong>RAG</strong> using Hugging Face embeddings, <strong>FAISS IVF-PQ</strong>, and LangChain over 1,200+ PDFs; reduced hallucinations by <strong>41%</strong>.</li>
+              <li>Integrated <strong>Azure Document Intelligence</strong> for OCR + layout parsing; improved structuring accuracy by <strong>33%</strong> and sped up query pipelines by <strong>19%</strong>.</li>
+              <li>Built an analytics dashboard (Plotly Dash + MongoDB) with a <strong>SARIMAX–XGBoost</strong> ensemble; achieved <strong>6.2% MAPE</strong> across 50 stocks.</li>
+              <li>Implemented unsupervised anomaly detection (<strong>PCA + DBSCAN</strong>) to flag irregular trading patterns; improved signal precision by <strong>17%</strong>.</li>
+            </ul>
+          </article>
+
+          <article class="item">
+            <div class="item-meta">
+              <h3>Pristyn Care <span class="badge">Backend Developer</span></h3>
+              <p class="muted">Jun 2022 – Dec 2022 • Gurugram, India</p>
+            </div>
+            <ul class="bullets">
+              <li>Built internal automation tools with <strong>Python + FastAPI</strong> and MongoDB; integrated Google My Business and WhatsApp APIs; reduced manual load by <strong>50%</strong>.</li>
+              <li>Developed predictive systems for sentiment analysis, image triage, and no-show forecasting; achieved <strong>87% accuracy</strong> and improved scheduling across 15+ specialties.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Projects</h2>
+          <p class="muted">Selected work — ML systems, GenAI apps, and performance benchmarking.</p>
+        </div>
+
+        <div class="cards">
+          <article class="card proj">
+            <div class="proj-head">
+              <h3>HybridMLComp</h3>
+              <span class="tag">ML Systems</span>
+            </div>
+            <p class="muted">
+              Benchmarking framework for TorchInductor, ONNX Runtime, and TensorRT across BERT/ResNet-50 with FP16/INT8 settings.
+            </p>
+            <ul class="bullets compact">
+              <li>Measured latency, throughput, memory; optimized hybrid pipelines</li>
+              <li>Achieved up to <strong>45% higher throughput</strong> at large batch inference</li>
+            </ul>
+            <div class="proj-actions">
+              <a class="mini-link" href="#" aria-disabled="true" title="Add your repo link in index.html">Repo (add link)</a>
+              <a class="mini-link" href="#" aria-disabled="true">Write-up (add link)</a>
+            </div>
+          </article>
+
+          <article class="card proj">
+            <div class="proj-head">
+              <h3>Speech Emotion Recognition</h3>
+              <span class="tag">Deep Learning</span>
+            </div>
+            <p class="muted">
+              Multi-speaker pipeline using diarization + VAD, robust acoustic features, and attention-based sequence models.
+            </p>
+            <ul class="bullets compact">
+              <li>pyannote audio diarization; MFCC/Chroma/Spectral features + augmentation</li>
+              <li>BiLSTM + CNN-BiLSTM w/ attention; achieved <strong>83% accuracy</strong></li>
+            </ul>
+            <div class="proj-actions">
+              <a class="mini-link" href="#" aria-disabled="true">Repo (add link)</a>
+              <a class="mini-link" href="#" aria-disabled="true">Paper/Thesis (add link)</a>
+            </div>
+          </article>
+
+          <article class="card proj">
+            <div class="proj-head">
+              <h3>PromtIQ</h3>
+              <span class="tag">GenAI / RAG</span>
+            </div>
+            <p class="muted">
+              Flask-based semantic QA for conversational querying over PDFs using OpenAI embeddings + FAISS indexing.
+            </p>
+            <ul class="bullets compact">
+              <li>Document parsing with PyMuPDF; retrieval-grounded responses</li>
+              <li>Fast semantic search and context-aware generation</li>
+            </ul>
+            <div class="proj-actions">
+              <a class="mini-link" href="#" aria-disabled="true">Repo (add link)</a>
+              <a class="mini-link" href="#" aria-disabled="true">Demo (add link)</a>
+            </div>
+          </article>
+
+          <article class="card proj">
+            <div class="proj-head">
+              <h3>Text-to-SQL Seq2Seq</h3>
+              <span class="tag">NLP</span>
+            </div>
+            <p class="muted">
+              Seq2Seq models (basic/attention/copy mechanism) converting natural language questions into SQL (Spider, ViText2SQL).
+            </p>
+            <ul class="bullets compact">
+              <li>TensorFlow training pipeline + GloVe embeddings; preprocessing + vocab creation</li>
+              <li>Evaluated via execution accuracy</li>
+            </ul>
+            <div class="proj-actions">
+              <a class="mini-link" href="#" aria-disabled="true">Repo (add link)</a>
+              <a class="mini-link" href="#" aria-disabled="true">Report (add link)</a>
+            </div>
+          </article>
+
+          <article class="card proj">
+            <div class="proj-head">
+              <h3>S&amp;P 500 Stock Forecasting</h3>
+              <span class="tag">Time Series</span>
+            </div>
+            <p class="muted">
+              Hybrid ensemble combining SARIMAX + LSTM with technical indicators and PCA feature compression.
+            </p>
+            <ul class="bullets compact">
+              <li>Reduced RMSE by <strong>15%</strong> vs standalone models (5 years daily data)</li>
+              <li>PCA condensed 150+ features to 40 components; reduced training time by <strong>20%</strong></li>
+            </ul>
+            <div class="proj-actions">
+              <a class="mini-link" href="#" aria-disabled="true">Repo (add link)</a>
+              <a class="mini-link" href="#" aria-disabled="true">Notebook (add link)</a>
+            </div>
+          </article>
+        </div>
+
+        <div class="note">
+          <p class="muted">
+            Tip: Replace the “add link” placeholders above with your GitHub repo links once you’re ready.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Skills</h2>
+          <p class="muted">Tools I use to build, ship, and measure real systems.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill">
+            <h3>Languages</h3>
+            <p class="muted">Python, Java, Golang, C++, R</p>
+          </div>
+          <div class="skill">
+            <h3>GenAI & NLP</h3>
+            <p class="muted">RAG, embeddings, FAISS, LangChain, OpenAI APIs, Hugging Face</p>
+          </div>
+          <div class="skill">
+            <h3>ML & DL</h3>
+            <p class="muted">PyTorch, TensorFlow, Keras, scikit-learn, DeepSpeed</p>
+          </div>
+          <div class="skill">
+            <h3>Backend</h3>
+            <p class="muted">FastAPI, Flask, Django, Spring Boot, Kafka, Docker, Datadog</p>
+          </div>
+          <div class="skill">
+            <h3>Data</h3>
+            <p class="muted">Pandas, NumPy, SciPy, Matplotlib, Plotly, Tableau</p>
+          </div>
+          <div class="skill">
+            <h3>Cloud & DB</h3>
+            <p class="muted">AWS, Azure, GCP, PostgreSQL, MySQL, MongoDB, Redis</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Contact</h2>
+          <p class="muted">Want to collaborate or interview? Let’s talk.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="panel">
+            <h3>Reach me</h3>
+            <ul class="contact-list">
+              <li><span class="label">Email</span> <a href="mailto:aman16@umd.edu">aman16@umd.edu</a></li>
+              <li><span class="label">Phone</span> <a href="tel:+12409606091">+1 (240) 960-6091</a></li>
+              <li><span class="label">LinkedIn</span> <a target="_blank" rel="noopener" href="https://linkedin.com/in/aman-pratap-singh54">linkedin.com/in/aman-pratap-singh54</a></li>
+              <li><span class="label">GitHub</span> <a target="_blank" rel="noopener" href="https://github.com/amanpratapsingh54">github.com/amanpratapsingh54</a></li>
+            </ul>
+          </div>
+
+          <form class="panel form" id="contactForm">
+            <h3>Quick message</h3>
+            <p class="muted small">
+              This form opens your email client (no backend needed).
+            </p>
+
+            <label>
+              Your name
+              <input type="text" id="name" placeholder="Your name" required />
+            </label>
+
+            <label>
+              Your email
+              <input type="email" id="email" placeholder="you@example.com" required />
+            </label>
+
+            <label>
+              Message
+              <textarea id="message" rows="5" placeholder="What would you like to discuss?" required></textarea>
+            </label>
+
+            <button class="btn" type="submit">Open Email</button>
+            <p class="muted small" id="formHint" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="muted">© <span id="year"></span> Aman Pratap Singh. Built with HTML/CSS/JS and hosted on GitHub Pages.</p>
+      <div class="footer-links">
+        <a href="#main">Top</a>
+        <a href="assets/Aman_Resume.pdf" target="_blank" rel="noopener">Resume</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
