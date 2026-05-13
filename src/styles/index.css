@@ -10,8 +10,10 @@
   scroll-behavior: smooth;
 }
 
-html:has(.home-scroll) {
-  scroll-snap-type: y proximity;
+html:has(.home-scroll),
+html.home-scroll-page,
+body.home-scroll-page {
+  scroll-snap-type: y mandatory;
   scroll-padding-top: 5rem;
 }
 
@@ -42,4 +44,8 @@ textarea {
 
 .home-scroll section {
   scroll-margin-top: 5rem;
+}
+
+.home-scroll {
+  scroll-snap-stop: always;
 }

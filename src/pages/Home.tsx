@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Page from "../components/Page";
 import Seo from "../components/Seo";
@@ -80,21 +81,50 @@ const sectionPreviews = [
       "Social links and a contact form flow are ready for opportunities, collaborations, and project conversations.",
     href: "/contact",
     icon: "Mail",
-    accent: "from-mint-200 to-cyan-500",
+    accent: "from-teal-200 to-cyan-500",
     stats: ["Email", "GitHub", "LinkedIn"],
     items: [profile.email, profile.availability, "Static-friendly contact flow"],
   },
 ];
 
 export default function Home() {
+  const [activeSection, setActiveSection] = useState("hero-preview");
   const Arrow = getIcon("ArrowRight");
   const Rocket = getIcon("Rocket");
   const Search = getIcon("Search");
 
+  useEffect(() => {
+    document.documentElement.classList.add("home-scroll-page");
+    document.body.classList.add("home-scroll-page");
+
+    const panels = Array.from(document.querySelectorAll<HTMLElement>("[data-home-panel]"));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleEntry = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
+
+        if (visibleEntry?.target.id) {
+          setActiveSection(visibleEntry.target.id);
+        }
+      },
+      { threshold: [0.45, 0.6, 0.75] },
+    );
+
+    panels.forEach((panel) => observer.observe(panel));
+
+    return () => {
+      observer.disconnect();
+      document.documentElement.classList.remove("home-scroll-page");
+      document.body.classList.remove("home-scroll-page");
+    };
+  }, []);
+
   return (
     <Page className="home-scroll px-0 pb-10 pt-0 sm:px-0 lg:px-0">
       <Seo />
-      <section className="mx-auto grid min-h-screen max-w-7xl snap-start items-center gap-12 px-4 pt-28 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+      <SectionRail activeSection={activeSection} />
+      <section id="hero-preview" data-home-panel className="mx-auto grid min-h-[100svh] max-w-7xl snap-start snap-always items-center gap-12 px-4 pt-28 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
         <motion.div variants={staggerContainer} initial="hidden" animate="visible">
           <motion.p variants={fadeUp} className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-700 dark:text-cyan-200">
             <Rocket size={16} />
@@ -157,6 +187,27 @@ export default function Home() {
   );
 }
 
+function SectionRail({ activeSection }: { activeSection: string }) {
+  const sections = [{ id: "hero-preview", label: "Home" }, ...sectionPreviews.map((section) => ({ id: section.id, label: section.eyebrow }))];
+
+  return (
+    <div className="fixed right-5 top-1/2 z-30 hidden -translate-y-1/2 flex-col gap-3 xl:flex" aria-hidden="true">
+      {sections.map((section) => {
+        const isActive = activeSection === section.id;
+
+        return (
+          <div key={section.id} className="flex items-center justify-end gap-3">
+            <span className={`text-xs font-semibold transition ${isActive ? "opacity-100 text-cyan-700 dark:text-cyan-200" : "opacity-0 text-slate-400"}`}>
+              {section.label}
+            </span>
+            <span className={`block h-2.5 rounded-full transition-all ${isActive ? "w-8 bg-cyan-400 shadow-[0_0_18px_rgba(103,232,249,.55)]" : "w-2.5 bg-slate-400/45"}`} />
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+
 type ScrollPreviewProps = {
   section: (typeof sectionPreviews)[number];
   index: number;
@@ -168,11 +219,11 @@ function ScrollPreview({ section, index }: ScrollPreviewProps) {
   const isReversed = index % 2 === 1;
 
   return (
-    <section id={section.id} className="grid min-h-[calc(100vh-5rem)] snap-start items-center py-16">
+    <section id={section.id} data-home-panel className="grid min-h-[100svh] snap-start snap-always items-center py-20">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false, amount: 0.45 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: false, amount: 0.62 }}
         transition={{ duration: 0.55, ease: "easeOut" }}
       >
         <Link
