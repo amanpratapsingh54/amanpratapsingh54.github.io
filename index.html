@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#070b12" />
+    <meta
+      name="description"
+      content="AI, machine learning, and data science portfolio featuring projects, research, experience, and writing."
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Aman Pratap Singh | AI/ML Portfolio" />
+    <meta
+      property="og:description"
+      content="Modern AI/ML portfolio with data science projects, research, experience, and technical writing."
+    />
+    <meta property="og:image" content="%BASE_URL%og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aman Pratap Singh | AI/ML Portfolio" />
+    <meta
+      name="twitter:description"
+      content="AI/ML, data science, research, and software engineering portfolio."
+    />
+    <link rel="icon" href="%BASE_URL%favicon.svg" />
+    <title>Aman Pratap Singh | AI/ML Portfolio</title>
+    <script>
+      (() => {
+        const storedTheme = localStorage.getItem("portfolio-theme");
+        if (storedTheme === "light") return;
+        document.documentElement.classList.add("dark");
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
