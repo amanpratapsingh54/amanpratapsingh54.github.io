@@ -6,5 +6,5 @@ const base = process.env.VITE_BASE_PATH ?? (repoName ? `/${repoName}/` : "/");
 
 export default defineConfig({
   plugins: [react()],
-  base: '/advanced-ai-portfolio/',
+  base: '/',
 });
