@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import { type ReactNode, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { type ReactNode, useEffect, useState } from "react";
 import { profile } from "../data/profile";
 import { socials } from "../data/socials";
 import { getIcon } from "../lib/icons";
@@ -8,13 +7,13 @@ import AnimatedBackground from "./AnimatedBackground";
 import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
-  { label: "Experience", href: "/experience" },
-  { label: "Research", href: "/research" },
-  { label: "Resume", href: "/resume" },
-  { label: "Contact", href: "/contact" },
+  { label: "Home", id: "home" },
+  { label: "About", id: "about" },
+  { label: "Projects", id: "projects" },
+  { label: "Experience", id: "experience" },
+  { label: "Research", id: "research" },
+  { label: "Resume", id: "resume" },
+  { label: "Contact", id: "contact" },
 ];
 
 type LayoutProps = {
@@ -23,8 +22,21 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
   const MenuIcon = getIcon("Menu");
   const CloseIcon = getIcon("X");
+
+  useEffect(() => {
+    const handleSectionChange = (event: Event) => {
+      const sectionId = (event as CustomEvent<string>).detail;
+      if (sectionId) {
+        setActiveSection(sectionId);
+      }
+    };
+
+    window.addEventListener("portfolio-section-change", handleSectionChange);
+    return () => window.removeEventListener("portfolio-section-change", handleSectionChange);
+  }, []);
 
   return (
     <div className="min-h-screen text-slate-900 antialiased dark:text-slate-100">
@@ -37,7 +49,7 @@ export default function Layout({ children }: LayoutProps) {
       </a>
       <header className="fixed inset-x-0 top-0 z-40 border-b border-slate-900/10 bg-white/78 backdrop-blur-2xl dark:border-white/10 dark:bg-ink/70">
         <nav className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Primary">
-          <NavLink to="/" className="group flex items-center gap-3" onClick={() => setIsMenuOpen(false)}>
+          <button type="button" className="group flex items-center gap-3 text-left" onClick={() => handleNavClick("home", setIsMenuOpen)}>
             <span className="grid h-11 w-11 place-items-center rounded-2xl border border-cyan-300/40 bg-cyan-300/10 font-display text-lg font-bold text-cyan-700 shadow-glow dark:text-cyan-200">
               AP
             </span>
@@ -45,23 +57,22 @@ export default function Layout({ children }: LayoutProps) {
               <span className="block font-display text-sm font-bold text-slate-950 dark:text-white">{profile.name}</span>
               <span className="block text-xs text-slate-500 dark:text-slate-400">{profile.role}</span>
             </span>
-          </NavLink>
+          </button>
 
           <div className="hidden items-center gap-1 lg:flex">
             {navItems.map((item) => (
-              <NavLink
-                key={item.href}
-                to={item.href}
-                className={({ isActive }) =>
-                  `rounded-full px-4 py-2 text-sm font-medium transition ${
-                    isActive
-                      ? "bg-slate-950 text-white dark:bg-white dark:text-slate-950"
-                      : "text-slate-600 hover:bg-slate-900/5 hover:text-slate-950 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
-                  }`
-                }
+              <button
+                key={item.id}
+                type="button"
+                onClick={() => handleNavClick(item.id, setIsMenuOpen)}
+                className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                  activeSection === item.id
+                    ? "bg-slate-950 text-white dark:bg-white dark:text-slate-950"
+                    : "text-slate-600 hover:bg-slate-900/5 hover:text-slate-950 dark:text-slate-300 dark:hover:bg-white/10 dark:hover:text-white"
+                }`}
               >
                 {item.label}
-              </NavLink>
+              </button>
             ))}
           </div>
 
@@ -89,20 +100,18 @@ export default function Layout({ children }: LayoutProps) {
             >
               <div className="mx-auto grid max-w-7xl gap-2">
                 {navItems.map((item) => (
-                  <NavLink
-                    key={item.href}
-                    to={item.href}
-                    onClick={() => setIsMenuOpen(false)}
-                    className={({ isActive }) =>
-                      `rounded-2xl px-4 py-3 text-sm font-medium ${
-                        isActive
-                          ? "bg-slate-950 text-white dark:bg-white dark:text-slate-950"
-                          : "text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/10"
-                      }`
-                    }
+                  <button
+                    key={item.id}
+                    type="button"
+                    onClick={() => handleNavClick(item.id, setIsMenuOpen)}
+                    className={`rounded-2xl px-4 py-3 text-left text-sm font-medium ${
+                      activeSection === item.id
+                        ? "bg-slate-950 text-white dark:bg-white dark:text-slate-950"
+                        : "text-slate-700 hover:bg-slate-900/5 dark:text-slate-200 dark:hover:bg-white/10"
+                    }`}
                   >
                     {item.label}
-                  </NavLink>
+                  </button>
                 ))}
               </div>
             </motion.div>
@@ -144,4 +153,9 @@ function Footer() {
       </div>
     </footer>
   );
+}
+
+function handleNavClick(sectionId: string, setIsMenuOpen: (value: boolean) => void) {
+  setIsMenuOpen(false);
+  document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth", block: "start" });
 }

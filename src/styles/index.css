@@ -10,9 +10,9 @@
   scroll-behavior: smooth;
 }
 
-html:has(.home-scroll),
-html.home-scroll-page,
-body.home-scroll-page {
+html:has(.single-scroll),
+html.single-scroll-page,
+body.single-scroll-page {
   scroll-snap-type: y mandatory;
   scroll-padding-top: 5rem;
 }
@@ -42,10 +42,10 @@ textarea {
   background: rgba(103, 232, 249, 0.35);
 }
 
-.home-scroll section {
+.single-scroll section {
   scroll-margin-top: 5rem;
 }
 
-.home-scroll {
+.single-scroll {
   scroll-snap-stop: always;
 }
