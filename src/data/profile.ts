@@ -1,9 +1,9 @@
 export const profile = {
   name: "Aman Pratap Singh",
-  role: "AI/ML Engineer & Data Scientist",
+  role: "ML Engineer & Data Scientist",
   location: "United States",
-  email: "aman@example.com",
-  resumeUrl: "/resume/Aman-Pratap-Singh-Resume.pdf",
+  email: "aman.pratap.personal@gmail.com",
+  resumeUrl: "https://drive.google.com/file/d/1atxebMtGQgm0qYmBHRfa98xRUcZ9JDy5/view?usp=sharing",
   avatarUrl: "",
   headline: "Building intelligent systems that turn messy data into useful products.",
   intro:
@@ -20,6 +20,6 @@ export const profile = {
     title: "Aman Pratap Singh | AI/ML Portfolio",
     description:
       "AI, machine learning, and data science portfolio featuring projects, research, experience, writing, and resume.",
-    url: "https://your-github-username.github.io/advanced-ai-portfolio/",
+    url: "https://amanpratapsingh54.github.io/",
   },
 };

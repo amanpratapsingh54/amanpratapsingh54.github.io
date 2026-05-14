@@ -8,20 +8,13 @@ export type EducationItem = {
 
 export const education: EducationItem[] = [
   {
-    school: "Your University",
-    degree: "M.S. / B.S. in Computer Science, Data Science, or Related Field",
-    dates: "2022 - 2026",
-    location: "City, State",
+    school: "University of Maryland at College Park",
+    degree: "M.S. in Applied Machine Learning",
+    dates: "August 2024 - May 2026",
+    location: "College Park, MD",
     details: [
-      "Relevant coursework: Machine Learning, Deep Learning, Data Mining, Algorithms, Databases.",
-      "Research interests: applied AI, model evaluation, analytics systems, and human-centered ML.",
-    ],
-  },
-  {
-    school: "Additional Program or Certification",
-    degree: "AI/ML, Data Engineering, or Cloud Certification",
-    dates: "2024",
-    location: "Remote",
-    details: ["Focused study in applied machine learning, cloud tooling, or analytical product development."],
+      "Relevant coursework: Machine Learning, Deep Learning, NLP, Computer Vision, Time Series Analysis",
+      "Research interests: Applied AI, model evaluation, analytics systems, and responsible deployment.",
+    ]
   },
 ];
