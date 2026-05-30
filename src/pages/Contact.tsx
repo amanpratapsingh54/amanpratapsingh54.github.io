@@ -1,3 +1,4 @@
+import type { FormEvent } from "react";
 import Page from "../components/Page";
 import SectionHeader from "../components/SectionHeader";
 import Seo from "../components/Seo";
@@ -18,12 +19,7 @@ export default function Contact() {
       />
 
       <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr]">
-        <form
-          action={`mailto:${profile.email}`}
-          method="post"
-          encType="text/plain"
-          className="rounded-[8px] border border-slate-900/10 bg-white/78 p-6 shadow-card backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06]"
-        >
+        <form onSubmit={handleContactSubmit} className="rounded-[8px] border border-slate-900/10 bg-white/78 p-6 shadow-card backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06]">
           <div className="grid gap-5 sm:grid-cols-2">
             <label className="grid gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
               Name
@@ -74,4 +70,17 @@ export default function Contact() {
       </div>
     </Page>
   );
+}
+
+function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+
+  const formData = new FormData(event.currentTarget);
+  const name = String(formData.get("name") ?? "");
+  const email = String(formData.get("email") ?? "");
+  const subject = String(formData.get("subject") || "Portfolio contact");
+  const message = String(formData.get("message") ?? "");
+  const body = [`Name: ${name}`, `Email: ${email}`, "", message].join("\n");
+
+  window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }

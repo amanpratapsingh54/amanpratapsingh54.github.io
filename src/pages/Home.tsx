@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useEffect, useMemo, useState, type ReactNode } from "react";
+import { useEffect, useMemo, useState, type FormEvent, type ReactNode } from "react";
 import Page from "../components/Page";
 import ProjectCard from "../components/ProjectCard";
 import ProjectModal from "../components/ProjectModal";
@@ -85,10 +85,10 @@ export default function Home() {
 function HeroSection() {
   const Arrow = getIcon("ArrowRight");
   const Rocket = getIcon("Rocket");
-  const Search = getIcon("Search");
+  const Brain = getIcon("BrainCircuit");
 
   return (
-    <section id="home" data-scroll-section className="mx-auto grid min-h-[100svh] max-w-7xl snap-start snap-always items-center gap-12 px-4 pt-28 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
+    <section id="home" data-scroll-section className="mx-auto grid min-h-[100svh] max-w-7xl items-center gap-12 px-4 pt-28 sm:px-6 lg:grid-cols-[1.05fr_0.95fr] lg:px-8">
       <motion.div variants={staggerContainer} initial="hidden" animate="visible">
         <motion.p variants={fadeUp} className="inline-flex items-center gap-2 rounded-full border border-cyan-400/30 bg-cyan-400/10 px-4 py-2 text-sm font-semibold text-cyan-700 dark:text-cyan-200">
           <Rocket size={16} />
@@ -125,15 +125,14 @@ function HeroSection() {
             ))}
           </div>
           <div className="mt-5 rounded-[8px] border border-cyan-300/30 bg-slate-950 p-5 text-white dark:bg-white/10">
-            <p className="flex items-center gap-2 font-mono text-sm text-cyan-200">
-              <Search size={16} />
-              scroll.navigator
-            </p>
-            <div className="mt-4 space-y-3 font-mono text-sm text-slate-300">
-              <p>{"> scroll(section)"}</p>
-              <p>{"> highlight(active_nav)"}</p>
-              <p>{"> inspect(content)"}</p>
-              <p className="text-brand-mint">{"> stay(single_page)"}</p>
+            <div className="flex items-center gap-3">
+              <div className="grid h-11 w-11 place-items-center rounded-2xl bg-cyan-300/10 text-cyan-200">
+                <Brain size={22} />
+              </div>
+              <div>
+                <p className="text-sm font-semibold text-cyan-200">AI/ML systems focus</p>
+                <p className="mt-1 text-sm text-slate-300">LLM fine-tuning, RAG, agentic tools, forecasting, and model evaluation.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -336,7 +335,7 @@ function ContactSection() {
   return (
     <PortfolioSection id="contact" eyebrow="Contact" title="Let’s talk about AI systems, data products, and research ideas" description="Reach out for roles, collaborations, research discussions, or thoughtful data and AI product work.">
       <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr]">
-        <form action={`mailto:${profile.email}`} method="post" encType="text/plain" className="rounded-[8px] border border-slate-900/10 bg-white/78 p-6 shadow-card backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06]">
+        <form onSubmit={handleContactSubmit} className="rounded-[8px] border border-slate-900/10 bg-white/78 p-6 shadow-card backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06]">
           <div className="grid gap-5 sm:grid-cols-2">
             <label className="grid gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200">
               Name
@@ -397,7 +396,7 @@ function PortfolioSection({
   children: ReactNode;
 }) {
   return (
-    <section id={id} data-scroll-section className="mx-auto min-h-[100svh] max-w-7xl snap-start scroll-mt-24 px-4 py-28 sm:px-6 lg:px-8">
+    <section id={id} data-scroll-section className="mx-auto min-h-[100svh] max-w-7xl scroll-mt-24 px-4 py-28 sm:px-6 lg:px-8">
       <motion.div initial={{ opacity: 0, y: 38 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, amount: 0.18 }} transition={{ duration: 0.55, ease: "easeOut" }}>
         <div className="mb-10 max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-700 dark:text-cyan-300">{eyebrow}</p>
@@ -431,4 +430,17 @@ function SectionRail({ activeSection }: { activeSection: string }) {
 
 function scrollToSection(id: string) {
   document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function handleContactSubmit(event: FormEvent<HTMLFormElement>) {
+  event.preventDefault();
+
+  const formData = new FormData(event.currentTarget);
+  const name = String(formData.get("name") ?? "");
+  const email = String(formData.get("email") ?? "");
+  const subject = String(formData.get("subject") || "Portfolio contact");
+  const message = String(formData.get("message") ?? "");
+  const body = [`Name: ${name}`, `Email: ${email}`, "", message].join("\n");
+
+  window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }

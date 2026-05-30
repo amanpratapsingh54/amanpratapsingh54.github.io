@@ -10,13 +10,6 @@
   scroll-behavior: smooth;
 }
 
-html:has(.single-scroll),
-html.single-scroll-page,
-body.single-scroll-page {
-  scroll-snap-type: y mandatory;
-  scroll-padding-top: 5rem;
-}
-
 .dark {
   color-scheme: dark;
 }
@@ -44,8 +37,4 @@ textarea {
 
 .single-scroll section {
   scroll-margin-top: 5rem;
-}
-
-.single-scroll {
-  scroll-snap-stop: always;
 }

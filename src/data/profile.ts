@@ -14,7 +14,7 @@ export const profile = {
   stats: [
     { label: "Current Program", value: "M.S. Applied ML" },
     { label: "Core Focus", value: "LLMs / RAG / ML" },
-    { label: "Delivery Stack", value: "Python + FastAPI" },
+    { label: "AI Stack", value: "PyTorch + LangChain" },
   ],
   seo: {
     title: "Aman Pratap Singh | AI/ML Portfolio",
