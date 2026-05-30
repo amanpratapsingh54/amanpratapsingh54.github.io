@@ -1,12 +1,14 @@
 import { useEffect } from "react";
 
+const cloudflareAnalyticsToken = "853cfb348c8e425281ffdb55f9e610a0";
+
 export default function Analytics() {
   useEffect(() => {
     const plausibleDomain = import.meta.env.VITE_PLAUSIBLE_DOMAIN;
     const goatCounterCode = import.meta.env.VITE_GOATCOUNTER_CODE;
     const umamiWebsiteId = import.meta.env.VITE_UMAMI_WEBSITE_ID;
     const umamiScriptUrl = import.meta.env.VITE_UMAMI_SCRIPT_URL;
-    const cloudflareToken = import.meta.env.VITE_CLOUDFLARE_ANALYTICS_TOKEN;
+    const cloudflareToken = import.meta.env.VITE_CLOUDFLARE_ANALYTICS_TOKEN || cloudflareAnalyticsToken;
 
     if (plausibleDomain) {
       appendScript("plausible-analytics", "https://plausible.io/js/script.js", {

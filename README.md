@@ -122,19 +122,19 @@ GitHub Pages is static, so analytics and real-time notifications need the right 
 
 ### Private Analytics Setup
 
-The app includes an optional analytics loader in `src/components/Analytics.tsx`. It does nothing until you add one of these GitHub repository variables:
+The app includes an analytics loader in `src/components/Analytics.tsx`. Cloudflare Web Analytics is already configured with the current site token. If you later rotate tokens or switch providers, add one of these GitHub repository variables:
 
 - `VITE_PLAUSIBLE_DOMAIN=amanpratapsingh54.github.io`
 - `VITE_GOATCOUNTER_CODE=your-goatcounter-subdomain`
 - `VITE_UMAMI_WEBSITE_ID=your-umami-website-id`
 - `VITE_UMAMI_SCRIPT_URL=https://your-umami-domain/script.js`
-- `VITE_CLOUDFLARE_ANALYTICS_TOKEN=your-cloudflare-token`
+- `VITE_CLOUDFLARE_ANALYTICS_TOKEN=your-new-cloudflare-token`
 
 For GitHub Pages:
 
 1. Open the repository on GitHub.
 2. Go to **Settings > Secrets and variables > Actions > Variables**.
-3. Add the variable for your provider.
+3. Add the variable for your provider if you want to override the current Cloudflare token or use another provider.
 4. Re-run the deploy workflow or push a new commit.
 
 The analytics dashboard remains private inside the provider account. Visitors can see that an analytics script is loaded, but they cannot see your dashboard.
