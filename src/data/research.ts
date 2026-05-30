@@ -10,32 +10,30 @@ export type ResearchItem = {
 
 export const research: ResearchItem[] = [
   {
-    title: "Evaluating Retrieval Quality in Small RAG Systems",
+    title: "Master Thesis: Speech Emotion Recognition",
     type: "Report",
-    venue: "Portfolio Working Note",
-    date: "2026",
+    venue: "National Institute of Technology Hamirpur",
+    date: "June 2020 - June 2022",
     summary:
-      "A placeholder report slot for experiments on chunking, embedding model selection, recall, precision, and citation faithfulness.",
-    tags: ["RAG", "Evaluation", "Embeddings"],
-    url: "#",
+      "Built a multi-speaker emotion recognition pipeline using pyannote diarization, MFCC, Chroma, Spectral Contrast, augmentation, CNN-BiLSTM, and attention. Achieved 83% accuracy across 6 emotion classes under 5-fold cross validation.",
+    tags: ["Speech Emotion Recognition", "CNN-BiLSTM", "Attention", "IEMOCAP", "CREMA-D"],
   },
   {
-    title: "A Practical Guide to ML Project Postmortems",
-    type: "Blog",
-    venue: "Personal Writing",
-    date: "Coming Soon",
+    title: "LLM/RAG-Assisted Cybersecurity Anomaly Detection",
+    type: "Future Work",
+    venue: "University of Maryland",
+    date: "2025 - 2026",
     summary:
-      "A future article template for lessons learned from model failures, metrics drift, and deployment constraints.",
-    tags: ["MLOps", "Writing", "Model Quality"],
+      "Research assistant work exploring embeddings, retrieval, dimensionality reduction, and clustering for temporal cybersecurity streams, evaluated with precision and recall@5 on 5k+ events.",
+    tags: ["Cybersecurity", "RAG", "Embeddings", "Clustering", "Evaluation"],
   },
   {
-    title: "Forecasting Notebook Collection",
+    title: "Multimodal Diagnostic Assistance with Literature Grounding",
     type: "Notebook",
-    venue: "GitHub",
-    date: "Draft",
+    venue: "Portfolio Research Project",
+    date: "2025 - Present",
     summary:
-      "A notebook series for comparing baseline forecasting models, feature strategies, and uncertainty intervals.",
-    tags: ["Forecasting", "Data Science", "Python"],
-    url: "#",
+      "MedVision Agent explores GPT-4o, LangGraph, chest X-ray interpretation, clinical notes, tool-use, and RAG over PubMed abstracts for differential diagnosis support.",
+    tags: ["Multimodal AI", "GPT-4o", "LangGraph", "PubMed", "Clinical AI"],
   },
 ];

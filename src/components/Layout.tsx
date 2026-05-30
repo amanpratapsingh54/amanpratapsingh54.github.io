@@ -4,6 +4,7 @@ import { profile } from "../data/profile";
 import { socials } from "../data/socials";
 import { getIcon } from "../lib/icons";
 import AnimatedBackground from "./AnimatedBackground";
+import Analytics from "./Analytics";
 import ThemeToggle from "./ThemeToggle";
 
 const navItems = [
@@ -40,6 +41,7 @@ export default function Layout({ children }: LayoutProps) {
 
   return (
     <div className="min-h-screen text-slate-900 antialiased dark:text-slate-100">
+      <Analytics />
       <AnimatedBackground />
       <a
         href="#main-content"

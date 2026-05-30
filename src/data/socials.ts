@@ -1,22 +1,22 @@
 export const socials = [
   {
     label: "GitHub",
-    href: "https://github.com/your-github-username",
+    href: "https://github.com/amanpratapsingh54",
     icon: "Github",
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/your-linkedin-handle/",
+    href: "https://www.linkedin.com/in/aman-pratap-singh54/",
     icon: "Linkedin",
   },
   {
     label: "Email",
-    href: "mailto:aman@example.com",
+    href: "mailto:aman.pratap.personal@gmail.com",
     icon: "Mail",
   },
   {
     label: "Resume",
-    href: "/resume/Aman-Pratap-Singh-Resume.pdf",
+    href: "resume/Aman_Resume_ML.pdf",
     icon: "FileText",
   },
 ];

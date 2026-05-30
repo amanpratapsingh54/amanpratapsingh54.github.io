@@ -13,8 +13,18 @@ export const education: EducationItem[] = [
     dates: "August 2024 - May 2026",
     location: "College Park, MD",
     details: [
-      "Relevant coursework: Machine Learning, Deep Learning, NLP, Computer Vision, Time Series Analysis",
-      "Research interests: Applied AI, model evaluation, analytics systems, and responsible deployment.",
-    ]
+      "Relevant coursework: Machine Learning, Deep Learning, Natural Language Processing, and Computer Vision.",
+      "Research interests: applied AI, LLM/RAG systems, cybersecurity anomaly detection, and model evaluation.",
+    ],
+  },
+  {
+    school: "National Institute of Technology Hamirpur",
+    degree: "Integrated M.Tech & B.Tech in Computer Science and Engineering",
+    dates: "August 2017 - May 2022",
+    location: "Hamirpur, India",
+    details: [
+      "Completed integrated undergraduate and graduate study in computer science and engineering.",
+      "Master's thesis focused on speech emotion recognition using diarization, acoustic features, and deep learning.",
+    ],
   },
 ];

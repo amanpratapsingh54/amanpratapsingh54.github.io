@@ -77,7 +77,7 @@ The UI supports dark and light themes through the toggle in the navbar.
 Replace:
 
 ```text
-public/resume/Aman-Pratap-Singh-Resume.pdf
+public/resume/Aman_Resume_ML.pdf
 ```
 
 Then update `resumeUrl` in `src/data/profile.ts` if you rename the file.
@@ -120,8 +120,27 @@ GitHub Pages is static, so analytics and real-time notifications need the right 
 4. A site cannot automatically know a visitor's real name. Analytics may show approximate page, timestamp, browser, referrer, country/city estimate, and IP-derived metadata depending on the provider and privacy laws.
 5. A visitor's name can be known with consent if they submit the contact form or log in through OAuth.
 
+### Private Analytics Setup
+
+The app includes an optional analytics loader in `src/components/Analytics.tsx`. It does nothing until you add one of these GitHub repository variables:
+
+- `VITE_PLAUSIBLE_DOMAIN=amanpratapsingh54.github.io`
+- `VITE_GOATCOUNTER_CODE=your-goatcounter-subdomain`
+- `VITE_UMAMI_WEBSITE_ID=your-umami-website-id`
+- `VITE_UMAMI_SCRIPT_URL=https://your-umami-domain/script.js`
+- `VITE_CLOUDFLARE_ANALYTICS_TOKEN=your-cloudflare-token`
+
+For GitHub Pages:
+
+1. Open the repository on GitHub.
+2. Go to **Settings > Secrets and variables > Actions > Variables**.
+3. Add the variable for your provider.
+4. Re-run the deploy workflow or push a new commit.
+
+The analytics dashboard remains private inside the provider account. Visitors can see that an analytics script is loaded, but they cannot see your dashboard.
+
 ## Production Notes
 
 - The contact form is currently a static UI. Connect it to Formspree, Basin, Netlify Forms, or a serverless endpoint for live submissions.
 - Project images use named gradient treatments to avoid asset bloat. You can replace them with real screenshots by changing the card rendering or mapping image keys to files in `public`.
-- The app uses `HashRouter` so refreshes work reliably on GitHub Pages without custom 404 routing.
+- The app is a single long scrolling page; the navbar and side rail update from the active scroll section.
