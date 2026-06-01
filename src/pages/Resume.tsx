@@ -13,11 +13,11 @@ export default function Resume() {
 
   return (
     <Page>
-      <Seo title="Resume" description="Downloadable PDF and structured HTML resume for AI/ML and data roles." />
+      <Seo title="Resume" description="Resume download and professional overview for AI/ML and data roles." />
       <SectionHeader
         eyebrow="Resume"
-        title="Downloadable PDF plus structured HTML resume"
-        description="A concise view of experience, education, skills, and a downloadable resume."
+        title="Click to download my resume"
+        description="A concise overview of my experience, education, projects, and technical skills."
       />
 
       <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
@@ -25,13 +25,13 @@ export default function Resume() {
           <div className="grid h-14 w-14 place-items-center rounded-2xl bg-cyan-500/10 text-cyan-700 dark:text-cyan-200">
             <File size={28} />
           </div>
-          <h2 className="mt-5 font-display text-2xl font-semibold text-slate-950 dark:text-white">PDF Resume</h2>
+          <h2 className="mt-5 font-display text-2xl font-semibold text-slate-950 dark:text-white">Resume Download</h2>
           <p className="mt-3 text-sm leading-6 text-slate-600 dark:text-slate-300">
             Download the latest resume PDF for a compact overview of experience, projects, and skills.
           </p>
-          <a href={profile.resumeUrl} className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-cyan-700 dark:bg-white dark:text-slate-950 dark:hover:bg-cyan-200">
+          <a href={profile.resumeUrl} download className="mt-6 inline-flex items-center justify-center gap-2 rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-cyan-700 dark:bg-white dark:text-slate-950 dark:hover:bg-cyan-200">
             <File size={17} />
-            Open Resume
+            Download Resume
           </a>
         </aside>
 

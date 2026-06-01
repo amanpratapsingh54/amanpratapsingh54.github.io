@@ -10,8 +10,8 @@ import ThemeToggle from "./ThemeToggle";
 const navItems = [
   { label: "Home", id: "home" },
   { label: "About", id: "about" },
-  { label: "Projects", id: "projects" },
   { label: "Experience", id: "experience" },
+  { label: "Projects", id: "projects" },
   { label: "Research", id: "research" },
   { label: "Resume", id: "resume" },
   { label: "Contact", id: "contact" },
