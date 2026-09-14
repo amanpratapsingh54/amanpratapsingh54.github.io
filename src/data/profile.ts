@@ -1,25 +1,25 @@
 export const profile = {
   name: "Aman Pratap Singh",
-  role: "ML Engineer & Data Scientist",
-  location: "New York, NY",
+  role: "AI Engineer",
+  location: "Mountain View, CA",
   email: "aman.pratap.personal@gmail.com",
-  resumeUrl: "resume/Aman_Resume_ML.pdf",
+  resumeUrl: "resume/Aman_Resume_AI.pdf",
   avatarUrl: "",
-  headline: "Building LLM, RAG, and machine learning systems that turn complex data into reliable decisions.",
+  headline: "Building production LLM, RAG, and agentic systems for reliable AI applications.",
   intro:
-    "I work across applied machine learning, generative AI, retrieval systems, forecasting, and data products, with experience shipping FastAPI services, agentic tools, dashboards, and production-minded ML workflows.",
+    "I build AI systems across retrieval, evaluation, model serving, and backend infrastructure, with experience shipping FastAPI services, agentic orchestration, LLM gateways, and production RAG pipelines.",
   bio:
-    "I am pursuing an M.S. in Applied Machine Learning at the University of Maryland and have professional experience as an ML Engineer and Data Scientist. My work spans LLM fine-tuning, RAG over financial documents, anomaly detection for cybersecurity streams, portfolio forecasting, NLP chatbots, computer vision triage, and agentic campus assistants.",
-  availability: "Open to machine learning, generative AI, data science, and research engineering opportunities",
+    "I am an AI Engineer with 2+ years of software engineering experience building production LLM, RAG, and agentic systems. I am pursuing an M.S. in Applied Machine Learning at the University of Maryland and have built retrieval pipelines, LLM evaluation harnesses, model-serving APIs, async ingestion systems, telemetry pipelines, and multi-service AI assistants.",
+  availability: "Open to AI engineering, LLM systems, retrieval, evaluation, and platform engineering opportunities",
   stats: [
     { label: "Current Program", value: "M.S. Applied ML" },
-    { label: "Core Focus", value: "LLMs / RAG / ML" },
-    { label: "AI Stack", value: "PyTorch + LangChain" },
+    { label: "Core Focus", value: "LLMs / RAG / Agents" },
+    { label: "AI Stack", value: "FastAPI + Claude" },
   ],
   seo: {
     title: "Aman Pratap Singh | AI/ML Portfolio",
     description:
-      "Aman Pratap Singh's machine learning portfolio featuring LLM, RAG, data science, forecasting, research, and engineering projects.",
+      "Aman Pratap Singh's AI engineering portfolio featuring LLM, RAG, agentic systems, evaluation, model serving, and backend infrastructure projects.",
     url: "https://amanpratapsingh54.github.io/advanced-ai-portfolio/",
   },
 };

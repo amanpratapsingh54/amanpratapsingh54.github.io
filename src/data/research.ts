@@ -10,30 +10,30 @@ export type ResearchItem = {
 
 export const research: ResearchItem[] = [
   {
-    title: "Master Thesis: Speech Emotion Recognition",
-    type: "Report",
-    venue: "National Institute of Technology Hamirpur",
-    date: "June 2020 - June 2022",
-    summary:
-      "Built a multi-speaker emotion recognition pipeline using pyannote diarization, MFCC, Chroma, Spectral Contrast, augmentation, CNN-BiLSTM, and attention. Achieved 83% accuracy across 6 emotion classes under 5-fold cross validation.",
-    tags: ["Speech Emotion Recognition", "CNN-BiLSTM", "Attention", "IEMOCAP", "CREMA-D"],
-  },
-  {
     title: "LLM/RAG-Assisted Cybersecurity Anomaly Detection",
-    type: "Future Work",
+    type: "Report",
     venue: "University of Maryland",
     date: "2025 - 2026",
     summary:
-      "Research assistant work exploring embeddings, retrieval, dimensionality reduction, and clustering for temporal cybersecurity streams, evaluated with precision and recall@5 on 5k+ events.",
-    tags: ["Cybersecurity", "RAG", "Embeddings", "Clustering", "Evaluation"],
+      "Research assistant work building Python evaluation tooling for anomaly detection over temporal cybersecurity streams, comparing sentence-embedding and clustering-based detectors against a rules-only baseline over a 5k-event labeled set.",
+    tags: ["Cybersecurity", "Embeddings", "Clustering", "Evaluation", "Python"],
   },
   {
-    title: "Multimodal Diagnostic Assistance with Literature Grounding",
-    type: "Notebook",
-    venue: "Portfolio Research Project",
-    date: "2025 - Present",
+    title: "Groundedness Evaluation for Financial RAG",
+    type: "Future Work",
+    venue: "DeepEmergence",
+    date: "2023 - 2024",
     summary:
-      "MedVision Agent explores GPT-4o, LangGraph, chest X-ray interpretation, clinical notes, tool-use, and RAG over PubMed abstracts for differential diagnosis support.",
-    tags: ["Multimodal AI", "GPT-4o", "LangGraph", "PubMed", "Clinical AI"],
+      "Designed an LLM-as-judge evaluation harness for a financial RAG system, using a fixed groundedness rubric to measure unsupported responses across outputs grounded in 1,200+ financial PDFs.",
+    tags: ["RAG", "LLM-as-Judge", "Groundedness", "Financial AI", "Evaluation"],
+  },
+  {
+    title: "Pull Request Review Precision Experiments",
+    type: "Notebook",
+    venue: "ReviewAgent",
+    date: "2026 - Present",
+    summary:
+      "Experimentation around precision-oriented automated code review using diff line-position mapping, tree-sitter scope extraction under token budgets, hunk prioritization, and offline regression tests before model calls.",
+    tags: ["Claude", "Code Review", "tree-sitter", "Evaluation", "GitHub App"],
   },
 ];

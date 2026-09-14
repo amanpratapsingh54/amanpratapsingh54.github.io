@@ -19,12 +19,22 @@ export const education: EducationItem[] = [
   },
   {
     school: "National Institute of Technology Hamirpur",
-    degree: "Integrated M.Tech & B.Tech in Computer Science and Engineering",
-    dates: "August 2017 - May 2022",
+    degree: "M.Tech in Computer Science and Engineering",
+    dates: "August 2021 - May 2022",
     location: "Hamirpur, India",
     details: [
-      "Completed integrated undergraduate and graduate study in computer science and engineering.",
-      "Master's thesis focused on speech emotion recognition using diarization, acoustic features, and deep learning.",
+      "Graduate study in computer science and engineering.",
+      "Research work included speech emotion recognition using diarization, acoustic features, and deep learning.",
+    ],
+  },
+  {
+    school: "National Institute of Technology Hamirpur",
+    degree: "B.Tech in Computer Science and Engineering",
+    dates: "August 2017 - May 2021",
+    location: "Hamirpur, India",
+    details: [
+      "Undergraduate study in computer science fundamentals, software engineering, algorithms, and systems.",
+      "Built foundations for later work in ML, backend systems, and AI applications.",
     ],
   },
 ];

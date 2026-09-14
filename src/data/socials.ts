@@ -16,7 +16,7 @@ export const socials = [
   },
   {
     label: "Resume",
-    href: "resume/Aman_Resume_ML.pdf",
+    href: "resume/Aman_Resume_AI.pdf",
     icon: "FileText",
   },
 ];

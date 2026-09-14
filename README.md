@@ -77,7 +77,7 @@ The UI supports dark and light themes through the toggle in the navbar.
 Replace:
 
 ```text
-public/resume/Aman_Resume_ML.pdf
+public/resume/Aman_Resume_AI.pdf
 ```
 
 Then update `resumeUrl` in `src/data/profile.ts` if you rename the file.
