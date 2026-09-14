@@ -1,28 +1,9 @@
-import { motion } from "framer-motion";
-
-const particles = Array.from({ length: 18 }, (_, index) => ({
-  id: index,
-  left: `${(index * 29) % 100}%`,
-  top: `${(index * 47) % 100}%`,
-  delay: (index % 7) * 0.55,
-  duration: 8 + (index % 6),
-}));
-
 export default function AnimatedBackground() {
   return (
-    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-slate-50 dark:bg-ink">
-      <div className="absolute inset-0 bg-tech-grid bg-[size:42px_42px] opacity-[0.22] dark:opacity-[0.16]" />
-      <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(103,232,249,.18),transparent_28%,rgba(251,191,36,.10)_52%,transparent_72%,rgba(94,234,212,.12))]" />
-      <div className="absolute inset-0 bg-gradient-to-b from-white/70 via-white/20 to-white dark:from-ink/10 dark:via-ink/40 dark:to-ink" />
-      {particles.map((particle) => (
-        <motion.span
-          key={particle.id}
-          className="absolute h-8 w-px bg-cyan-400/35 shadow-[0_0_16px_rgba(103,232,249,.35)]"
-          style={{ left: particle.left, top: particle.top }}
-          animate={{ opacity: [0.15, 0.9, 0.15], y: [0, -28, 0], scale: [0.8, 1.4, 0.8] }}
-          transition={{ duration: particle.duration, repeat: Infinity, delay: particle.delay, ease: "easeInOut" }}
-        />
-      ))}
+    <div aria-hidden="true" className="pointer-events-none fixed inset-0 -z-10 overflow-hidden bg-[#f7f8fb] dark:bg-[#080b10]">
+      <div className="absolute inset-x-0 top-0 h-px bg-slate-900/10 dark:bg-white/10" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(15,23,42,.045)_1px,transparent_1px),linear-gradient(90deg,rgba(15,23,42,.045)_1px,transparent_1px)] bg-[size:96px_96px] opacity-70 dark:bg-[linear-gradient(rgba(255,255,255,.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.035)_1px,transparent_1px)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(148,163,184,.18),transparent_34%),linear-gradient(to_bottom,transparent,rgba(247,248,251,.92)_78%)] dark:bg-[radial-gradient(circle_at_50%_-10%,rgba(51,65,85,.22),transparent_36%),linear-gradient(to_bottom,transparent,rgba(8,11,16,.95)_78%)]" />
     </div>
   );
 }
