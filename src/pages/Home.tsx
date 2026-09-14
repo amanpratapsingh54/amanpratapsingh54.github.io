@@ -248,7 +248,7 @@ function ProjectsSection({
 
 function ExperienceSection() {
   return (
-    <PortfolioSection id="experience" eyebrow="Experience" title="Work Experience" description="Roles, technical scope, and outcomes across AI engineering, retrieval, evaluation, and backend platform work.">
+    <PortfolioSection id="experience" eyebrow="Experience" title="Work Experience" description="Roles, technical scope, and outcomes across AI systems, backend engineering, data workflows, retrieval, and evaluation work.">
       <div className="mx-auto max-w-4xl space-y-8">
         {experience.map((item) => (
           <TimelineCard key={`${item.company}-${item.role}-${item.dates}`} item={item} />
@@ -339,7 +339,7 @@ function ContactSection() {
   const Send = getIcon("Send");
 
   return (
-    <PortfolioSection id="contact" eyebrow="Contact" title="Contact" description="Reach out for AI engineering roles, collaborations, or systems work.">
+    <PortfolioSection id="contact" eyebrow="Contact" title="Contact" description="Reach out for AI engineering, software engineering, data science, data engineering, backend roles, or collaboration opportunities.">
       <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr]">
         <form onSubmit={handleContactSubmit} className="rounded-[8px] border border-slate-900/10 bg-white/78 p-6 shadow-card backdrop-blur-xl dark:border-white/10 dark:bg-white/[0.06]">
           <div className="grid gap-5 sm:grid-cols-2">

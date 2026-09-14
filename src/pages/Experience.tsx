@@ -11,7 +11,7 @@ export default function Experience() {
       <SectionHeader
         eyebrow="Work"
         title="Experience shaped around measurable AI and data impact"
-        description="Roles, technical scope, and outcomes across AI engineering, analytics, and research-oriented product work."
+        description="Roles, technical scope, and outcomes across AI systems, backend engineering, analytics, and data-focused product work."
       />
 
       <div className="mx-auto max-w-4xl space-y-8">
